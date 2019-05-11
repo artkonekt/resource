@@ -23,8 +23,8 @@ class DefaultResourceTransformerTest extends TestCase
     public function it_returns_an_array_as_is()
     {
         $source = [
-            'id' => 23758,
-            'name' => 'José Armando',
+            'id'    => 23758,
+            'name'  => 'José Armando',
             'email' => 'jose@esmaralda.mx'
         ];
         $resource = new DefaultResource($source);
@@ -54,8 +54,8 @@ class DefaultResourceTransformerTest extends TestCase
         $resource = new DefaultResource(new SourceWithPublicProperties());
 
         $this->assertEquals([
-            'id' => 67099,
-            'name' => 'Sylius',
+            'id'     => 67099,
+            'name'   => 'Sylius',
             'isGood' => true
         ], $resource->toArray());
     }

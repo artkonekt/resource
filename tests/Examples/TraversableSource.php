@@ -21,7 +21,7 @@ class TraversableSource implements Iterator
 
     public function __construct(array $values)
     {
-        $this->values = $values;
+        $this->values   = $values;
         $this->position = 0;
     }
 

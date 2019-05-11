@@ -20,7 +20,7 @@ class ResourceTest extends TestCase
     /** @test */
     public function a_resource_has_a_default_transformer()
     {
-        $source = ['id' => 1, 'name' => 'Hola'];
+        $source   = ['id' => 1, 'name' => 'Hola'];
         $resource = new DefaultResource($source);
 
         $this->assertEquals($source, $resource->toArray());
