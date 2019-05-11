@@ -1,6 +1,6 @@
 # Konekt Resource Changelog
 
-## 0.X
+## 1.0-dev
 
 ### 0.1.0
 ###### yyyy-mm-dd
