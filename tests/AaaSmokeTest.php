@@ -1,6 +1,6 @@
 <?php
 /**
- * Contains the AbcSmokeTest class.
+ * Contains the AaaSmokeTest class.
  *
  * @copyright   Copyright (c) 2019 Attila Fulop
  * @author      Attila Fulop
@@ -14,7 +14,7 @@ use PHPUnit\Framework\TestCase;
 
 class AaaSmokeTest extends TestCase
 {
-    const MIN_PHP_VERSION = '7.1.3';
+    const MIN_PHP_VERSION = '7.2.0';
 
     /**
      * Very Basic smoke test case for testing against parse errors, etc
