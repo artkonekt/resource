@@ -2,13 +2,13 @@
 
 Whenever a resource converts the source model to an array, the source's attributes are retrieved by
 a transformer object. The library ships with a default transformer that fetches attributes according
-to the following logic:
+to the following logic when accessing `$this->attribute('attribute_name')`:
 
 - `$source['attribute_name']` if the source model is an array,
 - `$source->toArray()['attribute_name']` if the source model has a `toArray()` method,
 - `$source->__toArray()['attribute_name']` if the source model has a `__toArray()` method,
-- `$source->getFieldName()` if the source model has such a method,
-- `$source->fieldName` if the source has such a property (won't work via magic getter),
+- `$source->getAttributeName()` if the source model has such a method,
+- `$source->attributeName` if the source has such a property (won't work via magic getter),
 - `$source->attribute_name` property (also works via magic getter)
 
 If this generic logic doesn't work with your type of source model then you can customize the
