@@ -4,6 +4,7 @@
 
 - II. API Resources
     - [Defining Resources](defining-resources.md)
+    - [Transformers](transformers.md)
     - [Pagination](pagination.md)
     - [Methods](methods.md)
     - [Examples](examples.md)
