@@ -65,6 +65,9 @@ returned with the HTTP response. Source model properties can be accessed via
 - `$source->fieldName` if the source has such a property (won't work via magic getter),
 - `$source->field_name` property (also works via magic getter)
 
+> The behavior above is defined by the default built-in transformer that ships with this library.
+> See the [Transformers](transformers.md) section for details about customization.
+
 ## Using Resources
 
 Once the resource is defined, it may be returned from a route or controller:
@@ -83,4 +86,4 @@ class ProductController
 
 ---
 
-**Next**: [Pagination &raquo;](pagination.md)
+**Next**: [Transformers &raquo;](transformers.md)
