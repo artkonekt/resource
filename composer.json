@@ -1,6 +1,6 @@
 {
     "name": "konekt/resource",
-    "description": "Laravel inspired API resource implementation",
+    "description": "API Resources library to transform entities/models into REST API objects. Inspired by Laravel - usable in any Framework",
     "type": "library",
     "license": "MIT",
     "keywords": ["rest", "api", "resource", "konekt", "artkonekt"],

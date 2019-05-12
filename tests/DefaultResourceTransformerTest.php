@@ -14,7 +14,6 @@ namespace Konekt\Resource\Tests;
 use Konekt\Resource\Tests\Examples\DefaultResource;
 use Konekt\Resource\Tests\Examples\MySourceWithOwnToArrayMethod;
 use Konekt\Resource\Tests\Examples\SourceWithPublicProperties;
-use Konekt\Resource\Tests\Examples\TraversableSource;
 use PHPUnit\Framework\TestCase;
 
 class DefaultResourceTransformerTest extends TestCase
@@ -38,14 +37,6 @@ class DefaultResourceTransformerTest extends TestCase
         $resource = new DefaultResource(new MySourceWithOwnToArrayMethod());
 
         $this->assertEquals(['Hello'], $resource->toArray());
-    }
-
-    /** @test */
-    public function it_returns_the_array_representation_of_an_iterable_object()
-    {
-        $resource = new DefaultResource(new TraversableSource(["first", "second", "third"]));
-
-        $this->assertEquals(["first", "second", "third"], $resource->toArray());
     }
 
     /** @test */

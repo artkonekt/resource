@@ -29,16 +29,6 @@ class DefaultResourceTransformer implements ResourceTransformer
             return $source->__toArray();
         }
 
-        if (is_iterable($source)) {
-            $result = [];
-
-            foreach ($source as $key => $value) {
-                $result[$key] = $value;
-            }
-
-            return $result;
-        }
-
         if (is_object($source)) {
             return get_object_vars($source);
         }
