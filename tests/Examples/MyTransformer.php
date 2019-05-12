@@ -21,4 +21,9 @@ class MyTransformer implements SourceTransformer
             return $item[0] . $item[0] . $item[0];
         }, $source);
     }
+
+    public function attribute(string $name, $source)
+    {
+        return $source[$name][0] . $source[$name][0] . $source[$name][0];
+    }
 }

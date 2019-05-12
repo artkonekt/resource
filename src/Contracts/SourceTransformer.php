@@ -14,4 +14,14 @@ namespace Konekt\Resource\Contracts;
 interface SourceTransformer
 {
     public function toArray($source): array;
+
+    /**
+     * Returns a single attribute from the source model
+     *
+     * @param string $name
+     * @param mixed  $source
+     *
+     * @return mixed
+     */
+    public function attribute(string $name, $source);
 }

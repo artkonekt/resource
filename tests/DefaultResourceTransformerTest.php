@@ -12,7 +12,10 @@
 namespace Konekt\Resource\Tests;
 
 use Konekt\Resource\Tests\Examples\DefaultResource;
-use Konekt\Resource\Tests\Examples\MySourceWithOwnToArrayMethod;
+use Konekt\Resource\Tests\Examples\GiovanniResource;
+use Konekt\Resource\Tests\Examples\GiovanniWithGetterMethods;
+use Konekt\Resource\Tests\Examples\GiovanniWithMixedAttributeRepresentations;
+use Konekt\Resource\Tests\Examples\SourceWithOwnToArrayMethod;
 use Konekt\Resource\Tests\Examples\SourceWithPublicProperties;
 use PHPUnit\Framework\TestCase;
 
@@ -34,7 +37,7 @@ class DefaultResourceTransformerTest extends TestCase
     /** @test */
     public function it_uses_the_to_array_method_of_the_source_object_if_it_exists()
     {
-        $resource = new DefaultResource(new MySourceWithOwnToArrayMethod());
+        $resource = new DefaultResource(new SourceWithOwnToArrayMethod());
 
         $this->assertEquals(['Hello'], $resource->toArray());
     }
@@ -58,5 +61,27 @@ class DefaultResourceTransformerTest extends TestCase
         $this->assertEquals([3.14], (new DefaultResource(3.14))->toArray());
         $this->assertEquals([true], (new DefaultResource(true))->toArray());
         $this->assertEquals(['I am scalar hey'], (new DefaultResource('I am scalar hey'))->toArray());
+    }
+
+    /** @test */
+    public function it_returns_attribute_values_via_getter_methods()
+    {
+        $resource = new GiovanniResource(new GiovanniWithGetterMethods());
+        $serialized = $resource->toArray();
+
+        $this->assertEquals(1127, $serialized['id']);
+        $this->assertEquals('Giovanni Gatto', $serialized['name']);
+        $this->assertEquals('Delivered', $serialized['order_status']);
+    }
+
+    /** @test */
+    public function it_returns_attribute_values_via_getter_methods_public_properties_and_fields_via_magic_getters()
+    {
+        $resource = new GiovanniResource(new GiovanniWithMixedAttributeRepresentations());
+        $serialized = $resource->toArray();
+
+        $this->assertEquals(1127, $serialized['id']);
+        $this->assertEquals('Giovanni Gatto', $serialized['name']);
+        $this->assertEquals('Delivered', $serialized['order_status']);
     }
 }

@@ -11,7 +11,7 @@
 
 namespace Konekt\Resource\Tests\Examples;
 
-class MySourceWithOwnToArrayMethod
+class SourceWithOwnToArrayMethod
 {
     public function toArray()
     {

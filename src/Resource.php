@@ -49,6 +49,11 @@ class Resource
         return $this->getTransformer()->toArray($this->source);
     }
 
+    protected function attribute(string $name)
+    {
+        return $this->getTransformer()->attribute($name, $this->source);
+    }
+
     protected function getTransformer(): SourceTransformer
     {
         if (!$this->transformerInstance) {

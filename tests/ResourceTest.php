@@ -13,6 +13,7 @@ namespace Konekt\Resource\Tests;
 
 use Konekt\Resource\Tests\Examples\DefaultResource;
 use Konekt\Resource\Tests\Examples\MyResource;
+use Konekt\Resource\Tests\Examples\MyResourceWithNameAttributeOnly;
 use PHPUnit\Framework\TestCase;
 
 class ResourceTest extends TestCase
@@ -32,5 +33,17 @@ class ResourceTest extends TestCase
         $resource = new MyResource(['a' => 'b']);
 
         $this->assertEquals(['a' => 'bbb'], $resource->toArray());
+    }
+
+    /** @test */
+    public function the_resource_transformer_can_be_specified_and_works_with_attributes_method()
+    {
+        $resource = new MyResourceWithNameAttributeOnly([
+            'will' => 'be',
+            'ignored' => 'as well',
+            'name' => 'abc'
+        ]);
+
+        $this->assertEquals(['name' => 'aaa'], $resource->toArray());
     }
 }
