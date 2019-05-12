@@ -1,6 +1,6 @@
 <?php
 /**
- * Contains the DefaultResourceTransformer class.
+ * Contains the DefaultSourceTransformer class.
  *
  * @copyright   Copyright (c) 2019 Attila Fulop
  * @author      Attila Fulop
@@ -9,11 +9,11 @@
  *
  */
 
-namespace Konekt\Resource\Transformers;
+namespace Konekt\Resource;
 
-use Konekt\Resource\Contracts\ResourceTransformer;
+use Konekt\Resource\Contracts\SourceTransformer;
 
-class DefaultResourceTransformer implements ResourceTransformer
+class DefaultSourceTransformer implements SourceTransformer
 {
     public function toArray($source): array
     {

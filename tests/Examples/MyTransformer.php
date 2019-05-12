@@ -11,9 +11,9 @@
 
 namespace Konekt\Resource\Tests\Examples;
 
-use Konekt\Resource\Contracts\ResourceTransformer;
+use Konekt\Resource\Contracts\SourceTransformer;
 
-class MyTransformer implements ResourceTransformer
+class MyTransformer implements SourceTransformer
 {
     public function toArray($source): array
     {

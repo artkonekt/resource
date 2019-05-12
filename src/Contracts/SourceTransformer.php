@@ -1,6 +1,6 @@
 <?php
 /**
- * Contains the ResourceTransformer interface.
+ * Contains the SourceTransformer interface.
  *
  * @copyright   Copyright (c) 2019 Attila Fulop
  * @author      Attila Fulop
@@ -11,7 +11,7 @@
 
 namespace Konekt\Resource\Contracts;
 
-interface ResourceTransformer
+interface SourceTransformer
 {
     public function toArray($source): array;
 }

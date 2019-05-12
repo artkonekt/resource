@@ -11,8 +11,7 @@
 
 namespace Konekt\Resource;
 
-use Konekt\Resource\Contracts\ResourceTransformer;
-use Konekt\Resource\Transformers\DefaultResourceTransformer;
+use Konekt\Resource\Contracts\SourceTransformer;
 
 class Resource
 {
@@ -23,9 +22,9 @@ class Resource
      */
     protected $source;
 
-    protected static $transformer = DefaultResourceTransformer::class;
+    protected static $transformer = DefaultSourceTransformer::class;
 
-    /** @var ResourceTransformer|null */
+    /** @var SourceTransformer|null */
     private $transformerInstance;
 
     /**
@@ -50,7 +49,7 @@ class Resource
         return $this->getTransformer()->toArray($this->source);
     }
 
-    protected function getTransformer(): ResourceTransformer
+    protected function getTransformer(): SourceTransformer
     {
         if (!$this->transformerInstance) {
             $this->transformerInstance = new static::$transformer();
