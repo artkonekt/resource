@@ -2,4 +2,5 @@
 
 ---
 
-Congrats, you've reached the end of this doc! 🎉
+**Next**: [Using with Doctrine &raquo;](doctrine.md)
+
