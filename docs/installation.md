@@ -6,4 +6,8 @@ Install it via composer:
 composer require konekt/resource
 ```
 
-**Next**: [Creating Resources &raquo;](creating-resources.md)
+That's all.
+
+---
+
+**Next**: [Defining Resources &raquo;](defining-resources.md)
