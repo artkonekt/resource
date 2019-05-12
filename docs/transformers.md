@@ -1,8 +1,10 @@
 # Transformers
 
 Whenever a resource converts the source model to an array, the source's attributes are retrieved by
-a transformer object. The library ships with a default transformer that fetches attributes according
-to the following logic when accessing `$this->attribute('attribute_name')`:
+a transformer object.
+
+The library ships with a default transformer that fetches attributes according to the following
+logic when accessing `$this->attribute('attribute_name')`:
 
 - `$source['attribute_name']` if the source model is an array,
 - `$source->toArray()['attribute_name']` if the source model has a `toArray()` method,
@@ -17,7 +19,7 @@ transformer.
 ## Customizing the Transformer
 
 To use a custom transformer within your Resource class, set the transformer class in the
-`$transformer` property:
+static `$transformer` property:
 
 ```php
 class ShipmentTransformer extends Resource

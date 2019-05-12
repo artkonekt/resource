@@ -27,6 +27,11 @@ class Resource
     /** @var SourceTransformer|null */
     private $transformerInstance;
 
+    public static function collection($source)
+    {
+        return new AnonymousResourceCollection($source, static::class);
+    }
+
     /**
      * Create a new resource instance.
      *
