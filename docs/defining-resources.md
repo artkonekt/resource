@@ -11,7 +11,7 @@ Source models are defined by your application which can be for example:
 - Doctrine entities,
 - Active record instances (eg. Phalcon ORM models),
 - Enums,
-- Simple arrays 🤷,
+- Simple arrays, 🤪
 - any other object which you want to expose via API.
 
 ## Basic Usage
