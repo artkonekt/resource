@@ -2,7 +2,7 @@
     - [Concept Overview](README.md)
     - [Installation](installation.md)
 
-- II. Creating Resources
+- II. API Resources
     - [Defining Resources](defining-resources.md)
     - [Pagination](pagination.md)
     - [Methods](methods.md)
