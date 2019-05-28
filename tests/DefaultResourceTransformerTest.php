@@ -66,7 +66,7 @@ class DefaultResourceTransformerTest extends TestCase
     /** @test */
     public function it_returns_attribute_values_via_getter_methods()
     {
-        $resource = new GiovanniResource(new GiovanniWithGetterMethods());
+        $resource   = new GiovanniResource(new GiovanniWithGetterMethods());
         $serialized = $resource->toArray();
 
         $this->assertEquals(1127, $serialized['id']);
@@ -77,7 +77,7 @@ class DefaultResourceTransformerTest extends TestCase
     /** @test */
     public function it_returns_attribute_values_via_getter_methods_public_properties_and_fields_via_magic_getters()
     {
-        $resource = new GiovanniResource(new GiovanniWithMixedAttributeRepresentations());
+        $resource   = new GiovanniResource(new GiovanniWithMixedAttributeRepresentations());
         $serialized = $resource->toArray();
 
         $this->assertEquals(1127, $serialized['id']);

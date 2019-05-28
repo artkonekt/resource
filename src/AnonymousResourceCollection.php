@@ -26,5 +26,4 @@ class AnonymousResourceCollection
 
         parent::__construct($source);
     }
-
 }

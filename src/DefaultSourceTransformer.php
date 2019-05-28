@@ -59,13 +59,12 @@ class DefaultSourceTransformer implements SourceTransformer
         }
 
         if (is_object($source)) {
-
             if (method_exists($source, $method = $this->getterMethodName($name))) { // eg. $src->getShipmentStatus()
                 return $source->{$method}();
             }
 
             $properties = get_object_vars($source);
-            $property = $this->camelCase($name);
+            $property   = $this->camelCase($name);
 
             if (array_key_exists($property, $properties)) { // eg. $src->shipmentStatus
                 return $source->{$property};
@@ -96,7 +95,7 @@ class DefaultSourceTransformer implements SourceTransformer
 
     private function getterMethodName(string $propertyName): string
     {
-        $name = $this->camelCase($propertyName);
+        $name   = $this->camelCase($propertyName);
         $pieces = preg_split('/(?=[A-Z])/', $name);
 
         if (in_array($pieces[0], self::BOOL_PREFIXES)) {

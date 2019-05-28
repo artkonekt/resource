@@ -39,9 +39,9 @@ class ResourceTest extends TestCase
     public function the_resource_transformer_can_be_specified_and_works_with_attributes_method()
     {
         $resource = new MyResourceWithNameAttributeOnly([
-            'will' => 'be',
+            'will'    => 'be',
             'ignored' => 'as well',
-            'name' => 'abc'
+            'name'    => 'abc'
         ]);
 
         $this->assertEquals(['name' => 'aaa'], $resource->toArray());

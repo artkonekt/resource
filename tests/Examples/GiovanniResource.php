@@ -18,8 +18,8 @@ class GiovanniResource extends Resource
     public function toArray(): array
     {
         return [
-            'id' => $this->attribute('id'),
-            'name' => $this->attribute('name'),
+            'id'           => $this->attribute('id'),
+            'name'         => $this->attribute('name'),
             'order_status' => $this->attribute('order_status')
         ];
     }

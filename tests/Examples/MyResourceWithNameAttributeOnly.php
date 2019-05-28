@@ -23,5 +23,4 @@ class MyResourceWithNameAttributeOnly extends Resource
             'name' => $this->attribute('name')
         ];
     }
-
 }
