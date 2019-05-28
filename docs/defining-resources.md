@@ -61,6 +61,7 @@ returned with the HTTP response. Source model properties can be accessed via
 - `$source['field_name']` if the source model is an array,
 - `$source->toArray()['field_name']` if the source model has a `toArray()` method,
 - `$source->__toArray()['field_name']` if the source model has a `__toArray()` method,
+- `$source->fieldName()` if the fieldName is an "is"-er (starts with 'is', 'has', 'can', 'was', 'should', 'allows') and source has such a method,
 - `$source->getFieldName()` if the source model has such a method,
 - `$source->fieldName` if the source has such a property (won't work via magic getter),
 - `$source->field_name` property (also works via magic getter)
