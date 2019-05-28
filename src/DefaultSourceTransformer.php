@@ -15,6 +15,8 @@ use Konekt\Resource\Contracts\SourceTransformer;
 
 class DefaultSourceTransformer implements SourceTransformer
 {
+    const BOOL_PREFIXES = ['is', 'has', 'can', 'was', 'should', 'allows'];
+
     public function toArray($source): array
     {
         if (is_array($source)) {
@@ -58,13 +60,18 @@ class DefaultSourceTransformer implements SourceTransformer
 
         if (is_object($source)) {
 
-            if (method_exists($source, $method = 'get' . $this->pascalCase($name))) { // eg. $src->getShipmentStatus()
+            if (method_exists($source, $method = $this->getterMethodName($name))) { // eg. $src->getShipmentStatus()
                 return $source->{$method}();
-            } elseif (property_exists($source, $property = $this->camelCase($name))) { // eg. $src->shipmentStatus
+            }
+
+            $properties = get_object_vars($source);
+            $property = $this->camelCase($name);
+
+            if (array_key_exists($property, $properties)) { // eg. $src->shipmentStatus
                 return $source->{$property};
             }
 
-            return $source->{$name}; // Try the property as is, also by falling back to magic getters
+            return $source->{$name} ?? null; // Try the property as is, also by falling back to magic getters
         }
 
         return null;
@@ -87,5 +94,15 @@ class DefaultSourceTransformer implements SourceTransformer
         return str_replace(' ', '', $result);
     }
 
+    private function getterMethodName(string $propertyName): string
+    {
+        $name = $this->camelCase($propertyName);
+        $pieces = preg_split('/(?=[A-Z])/', $name);
 
+        if (in_array($pieces[0], self::BOOL_PREFIXES)) {
+            return $name;
+        }
+
+        return 'get' . $name;
+    }
 }
