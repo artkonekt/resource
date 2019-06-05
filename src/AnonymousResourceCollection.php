@@ -11,19 +11,36 @@
 
 namespace Konekt\Resource;
 
-class AnonymousResourceCollection
+use Konekt\Resource\Contracts\ApiResource;
+
+class AnonymousResourceCollection implements ApiResource
 {
     /**
-     * The name of the resource being collected.
+     * The class of the resource being collected.
      *
      * @var string
      */
     public $collects;
 
-    public function __construct($source, string $collects)
-    {
-        $this->collects = $collects;
+    /**
+     * @var iterable
+     */
+    private $source;
 
-        parent::__construct($source);
+    public function __construct(iterable $source, string $collects)
+    {
+        $this->source = $source;
+        $this->collects = $collects;
+    }
+
+    public function toArray(): array
+    {
+        $response = [];
+
+        foreach ($this->source as $item) {
+            $response[] = (new $this->collects($item))->toArray();
+        }
+
+        return $response;
     }
 }

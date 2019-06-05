@@ -11,9 +11,10 @@
 
 namespace Konekt\Resource;
 
+use Konekt\Resource\Contracts\ApiResource;
 use Konekt\Resource\Contracts\SourceTransformer;
 
-class Resource
+class Resource implements ApiResource
 {
     /**
      * The source of the data instance.

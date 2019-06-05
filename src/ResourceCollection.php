@@ -2,7 +2,9 @@
 
 namespace Konekt\Resource;
 
-class ResourceCollection
+use Konekt\Resource\Contracts\ApiResource;
+
+class ResourceCollection implements ApiResource
 {
     /** @var string The resource that this resource collects. */
     public $collects;
@@ -21,8 +23,8 @@ class ResourceCollection
         return $this->collection->count();
     }
 
-    public function toArray($request): array
+    public function toArray(): array
     {
-        return $this->collection->map->toArray($request)->all();
+        return $this->collection->map->toArray()->all();
     }
 }
