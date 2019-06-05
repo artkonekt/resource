@@ -24,7 +24,7 @@ class ResourceTest extends TestCase
         $source   = ['id' => 1, 'name' => 'Hola'];
         $resource = new DefaultResource($source);
 
-        $this->assertEquals($source, $resource->toArray());
+        $this->assertEquals($source, $resource->resolve());
     }
 
     /** @test */
@@ -32,7 +32,7 @@ class ResourceTest extends TestCase
     {
         $resource = new MyResource(['a' => 'b']);
 
-        $this->assertEquals(['a' => 'bbb'], $resource->toArray());
+        $this->assertEquals(['a' => 'bbb'], $resource->resolve());
     }
 
     /** @test */
@@ -44,6 +44,6 @@ class ResourceTest extends TestCase
             'name'    => 'abc'
         ]);
 
-        $this->assertEquals(['name' => 'aaa'], $resource->toArray());
+        $this->assertEquals(['name' => 'aaa'], $resource->resolve());
     }
 }

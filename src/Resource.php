@@ -55,6 +55,12 @@ class Resource implements ApiResource
         return $this->getTransformer()->toArray($this->source);
     }
 
+    public function resolve($request = null): array
+    {
+        return $this->toArray();
+    }
+
+
     protected function attribute(string $name)
     {
         return $this->getTransformer()->attribute($name, $this->source);

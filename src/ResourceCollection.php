@@ -27,4 +27,11 @@ class ResourceCollection implements ApiResource
     {
         return $this->collection->map->toArray()->all();
     }
+
+    public function resolve($request = null): array
+    {
+        return $this->collection->resolve();
+    }
+
+
 }

@@ -43,4 +43,17 @@ class AnonymousResourceCollection implements ApiResource
 
         return $response;
     }
+
+    public function resolve($request = null): array
+    {
+        $response = [];
+
+        foreach ($this->source as $item) {
+            $response[] = (new $this->collects($item))->resolve();
+        }
+
+        return $response;
+    }
+
+
 }

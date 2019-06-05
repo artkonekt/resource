@@ -31,7 +31,7 @@ class DefaultResourceTransformerTest extends TestCase
         ];
         $resource = new DefaultResource($source);
 
-        $this->assertEquals($source, $resource->toArray());
+        $this->assertEquals($source, $resource->resolve());
     }
 
     /** @test */
@@ -39,7 +39,7 @@ class DefaultResourceTransformerTest extends TestCase
     {
         $resource = new DefaultResource(new SourceWithOwnToArrayMethod());
 
-        $this->assertEquals(['Hello'], $resource->toArray());
+        $this->assertEquals(['Hello'], $resource->resolve());
     }
 
     /** @test */
@@ -51,23 +51,23 @@ class DefaultResourceTransformerTest extends TestCase
             'id'     => 67099,
             'name'   => 'Sylius',
             'isGood' => true
-        ], $resource->toArray());
+        ], $resource->resolve());
     }
 
     /** @test */
     public function it_returns_scalars_wrapped_in_an_array()
     {
-        $this->assertEquals([301], (new DefaultResource(301))->toArray());
-        $this->assertEquals([3.14], (new DefaultResource(3.14))->toArray());
-        $this->assertEquals([true], (new DefaultResource(true))->toArray());
-        $this->assertEquals(['I am scalar hey'], (new DefaultResource('I am scalar hey'))->toArray());
+        $this->assertEquals([301], (new DefaultResource(301))->resolve());
+        $this->assertEquals([3.14], (new DefaultResource(3.14))->resolve());
+        $this->assertEquals([true], (new DefaultResource(true))->resolve());
+        $this->assertEquals(['I am scalar hey'], (new DefaultResource('I am scalar hey'))->resolve());
     }
 
     /** @test */
     public function it_returns_attribute_values_via_getter_methods()
     {
         $resource   = new GiovanniResource(new GiovanniWithGetterMethods());
-        $serialized = $resource->toArray();
+        $serialized = $resource->resolve();
 
         $this->assertEquals(1127, $serialized['id']);
         $this->assertEquals('Giovanni Gatto', $serialized['name']);
@@ -78,7 +78,7 @@ class DefaultResourceTransformerTest extends TestCase
     public function it_returns_attribute_values_via_getter_methods_public_properties_and_fields_via_magic_getters()
     {
         $resource   = new GiovanniResource(new GiovanniWithMixedAttributeRepresentations());
-        $serialized = $resource->toArray();
+        $serialized = $resource->resolve();
 
         $this->assertEquals(1127, $serialized['id']);
         $this->assertEquals('Giovanni Gatto', $serialized['name']);

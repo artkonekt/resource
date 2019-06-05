@@ -17,4 +17,9 @@ interface ApiResource
      * Transforms the resource into an array.
      */
     public function toArray(): array;
+
+    /**
+     * Returns the resolved array - to be returned as response
+     */
+    public function resolve($request = null): array;
 }

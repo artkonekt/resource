@@ -49,7 +49,7 @@ class AnonymousResourceCollectionTest extends TestCase
                 'name' => 'Sandor',
                 'isGood' => false
             ],
-        ], $result->toArray());
+        ], $result->resolve());
     }
 
     /** @test */
@@ -94,6 +94,6 @@ class AnonymousResourceCollectionTest extends TestCase
                     ]
                 ]
             ]
-        ], $orders->toArray());
+        ], $orders->resolve());
     }
 }

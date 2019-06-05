@@ -27,7 +27,7 @@ $product = $productRepository->find(1);
 $resource = new ProductResource($product);
 
 // The HTTP response:
-$response = new JsonResponse($resource->toArray());
+$response = new JsonResponse($resource->resolve());
 ```
 
 ## Creating Resources
@@ -53,6 +53,8 @@ class User extends Resource
     }
 }
 ```
+
+!> Do not use the `toArray()` method when returning HTTP responses, use the `resolve()` method instead.
 
 Every resource class defines a `toArray` method which returns the array of attributes that should be
 returned with the HTTP response. Source model properties can be accessed via
@@ -80,7 +82,7 @@ class ProductController
     {
         $product = new ProductResource(Product::find($request->get('id')));
 
-        return new JsonResponse($product->toArray());
+        return new JsonResponse($product->resolve());
     }
 }
 ```
