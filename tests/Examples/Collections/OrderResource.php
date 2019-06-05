@@ -12,7 +12,7 @@ class OrderResource extends Resource
             'id' => $this->attribute('id'),
             'number' => $this->attribute('number'),
             'created_at' => $this->attribute('createdAt')->format('Y-m-d H:i:s'),
-            'items' => OrderItemResource::collection($this->source->getItems())->toArray()
+            'items' => OrderItemResource::collection($this->source->getItems())
         ];
     }
 }

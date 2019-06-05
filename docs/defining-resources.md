@@ -87,6 +87,35 @@ class ProductController
 }
 ```
 
+## Resource Collections
+
+If you are returning a collection of resources, you may use the
+`collection()` factory method to create a resource instance:
+
+```php
+class UserController
+{
+    public function index($request)
+    {
+        $users = UserResource::collection(UserRepository::findAll());
+
+        return new JsonResponse($users->resolve());
+    }
+}
+```
+
+This method is simple and does not allow any addition of meta data that
+may need to be returned with the collection.
+
+### Separating Collections and Single Resources
+
+If you would like to return responses in different format for collections
+than for single resources, then you have to create a dedicated resource
+to represent the collection.
+
+*TO BE WRITTEN.. ¯\_(ツ)_/¯*
+Also mention subcollections (to specify the resource and not ->toArray())
+
 ---
 
 **Next**: [Transformers &raquo;](transformers.md)

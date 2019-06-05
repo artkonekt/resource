@@ -57,7 +57,15 @@ class Resource implements ApiResource
 
     public function resolve($request = null): array
     {
-        return $this->toArray();
+        $result = $this->toArray();
+
+        foreach ($result as $key => $value) {
+            if ($value instanceof ApiResource) {
+                $result[$key] = $value->resolve($request);
+            }
+        }
+
+        return $result;
     }
 
 
