@@ -13,9 +13,16 @@ namespace Konekt\Resource\Tests\Examples;
 
 class SourceWithPublicProperties
 {
-    public $id = 67099;
+    public $id;
 
-    public $name = 'Sylius';
+    public $name;
 
-    public $isGood = true;
+    public $isGood;
+
+    public function __construct(int $id = 67099, string $name = 'Sylius', bool $isGood = true)
+    {
+        $this->id = $id;
+        $this->name = $name;
+        $this->isGood = $isGood;
+    }
 }
