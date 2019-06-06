@@ -16,8 +16,8 @@ class Order
 
     public function __construct(int $id, string $number, DateTime $createdAt)
     {
-        $this->id = $id;
-        $this->number = $number;
+        $this->id        = $id;
+        $this->number    = $number;
         $this->createdAt = $createdAt;
     }
 

@@ -35,18 +35,18 @@ class AnonymousResourceCollectionTest extends TestCase
 
         $this->assertEquals([
             [
-                'id' => 21,
-                'name' => 'Alex',
+                'id'     => 21,
+                'name'   => 'Alex',
                 'isGood' => true
             ],
             [
-                'id' => 42,
-                'name' => 'Oleksiy',
+                'id'     => 42,
+                'name'   => 'Oleksiy',
                 'isGood' => true
             ],
             [
-                'id' => 64,
-                'name' => 'Sandor',
+                'id'     => 64,
+                'name'   => 'Sandor',
                 'isGood' => false
             ],
         ], $result->resolve());
@@ -68,28 +68,28 @@ class AnonymousResourceCollectionTest extends TestCase
 
         $this->assertEquals([
             [
-                'id' => 100,
-                'number' => 'XC3-IRP',
+                'id'         => 100,
+                'number'     => 'XC3-IRP',
                 'created_at' => '2019-06-05 11:32:10',
-                'items' => [
+                'items'      => [
                     [
-                        'name' => 'Porsche',
-                        'qty' => 1,
+                        'name'  => 'Porsche',
+                        'qty'   => 1,
                         'price' => 12000
                     ], [
-                        'name' => 'Ferrari',
-                        'qty' => 1,
+                        'name'  => 'Ferrari',
+                        'qty'   => 1,
                         'price' => 19000
                     ]
                 ]
             ], [
-                'id' => 101,
-                'number' => 'XC3-IRZ',
+                'id'         => 101,
+                'number'     => 'XC3-IRZ',
                 'created_at' => '2019-06-05 11:32:10',
-                'items' => [
+                'items'      => [
                     [
-                        'name' => 'McLaren',
-                        'qty' => 2,
+                        'name'  => 'McLaren',
+                        'qty'   => 2,
                         'price' => 17300
                     ]
                 ]

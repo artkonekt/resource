@@ -29,7 +29,7 @@ class AnonymousResourceCollection implements ApiResource
 
     public function __construct(iterable $source, string $collects)
     {
-        $this->source = $source;
+        $this->source   = $source;
         $this->collects = $collects;
     }
 
@@ -54,6 +54,4 @@ class AnonymousResourceCollection implements ApiResource
 
         return $response;
     }
-
-
 }

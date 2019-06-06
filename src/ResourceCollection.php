@@ -32,6 +32,4 @@ class ResourceCollection implements ApiResource
     {
         return $this->collection->resolve();
     }
-
-
 }

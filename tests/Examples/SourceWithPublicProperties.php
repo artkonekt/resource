@@ -21,8 +21,8 @@ class SourceWithPublicProperties
 
     public function __construct(int $id = 67099, string $name = 'Sylius', bool $isGood = true)
     {
-        $this->id = $id;
-        $this->name = $name;
+        $this->id     = $id;
+        $this->name   = $name;
         $this->isGood = $isGood;
     }
 }

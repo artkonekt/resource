@@ -12,8 +12,8 @@ class OrderItem
 
     public function __construct(string $name, int $qty, float $price)
     {
-        $this->name = $name;
-        $this->qty = $qty;
+        $this->name  = $name;
+        $this->qty   = $qty;
         $this->price = $price;
     }
 }
