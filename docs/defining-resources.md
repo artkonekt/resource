@@ -114,6 +114,7 @@ than for single resources, then you have to create a dedicated resource
 to represent the collection.
 
 *TO BE WRITTEN.. ¯\_(ツ)_/¯*
+
 Also mention subcollections (to specify the resource and not ->toArray())
 
 ---
