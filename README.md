@@ -24,7 +24,7 @@ using composer: `composer require konekt/resource`
 ## Documentation
 
 For detailed usage and examples go to the
-[Resource Documentation](https://artkonekt.github.io/resource) or refer to the markdown files in the
+[Resource Documentation](https://konekt.dev/resource/) or refer to the markdown files in the
 `docs/` folder of this repo.
 
 For the list of changes read the [Changelog](Changelog.md).
