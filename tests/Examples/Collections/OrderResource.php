@@ -6,7 +6,7 @@ use Konekt\Resource\Resource;
 
 class OrderResource extends Resource
 {
-    public function toArray():array
+    public function toArray(): array
     {
         return [
             'id'         => $this->attribute('id'),

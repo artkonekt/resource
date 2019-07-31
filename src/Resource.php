@@ -28,11 +28,6 @@ class Resource implements ApiResource
     /** @var SourceTransformer|null */
     private $transformerInstance;
 
-    public static function collection($source)
-    {
-        return new AnonymousResourceCollection($source, static::class);
-    }
-
     /**
      * Create a new resource instance.
      *
@@ -41,6 +36,11 @@ class Resource implements ApiResource
     public function __construct($source)
     {
         $this->source = $source;
+    }
+
+    public static function collection($source)
+    {
+        return new AnonymousResourceCollection($source, static::class);
     }
 
     /**
@@ -67,7 +67,6 @@ class Resource implements ApiResource
 
         return $result;
     }
-
 
     protected function attribute(string $name)
     {

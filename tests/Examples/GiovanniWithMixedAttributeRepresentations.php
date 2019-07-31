@@ -15,13 +15,13 @@ class GiovanniWithMixedAttributeRepresentations
 {
     public $orderStatus = 'Delivered';
 
+    public function __get($key): string
+    {
+        return 'id' === $key ? 1127 : null;
+    }
+
     public function getName(): string
     {
         return 'Giovanni Gatto';
-    }
-
-    public function __get($key): string
-    {
-        return $key === 'id' ? 1127 : null;
     }
 }
