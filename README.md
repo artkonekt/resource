@@ -1,6 +1,6 @@
 # API Resources for PHP
 
-[![Travis Build Status](https://img.shields.io/travis/artkonekt/resource.svg?style=flat-square)](https://travis-ci.org/artkonekt/resource)
+[![Tests](https://img.shields.io/github/actions/workflow/status/artkonekt/resource/tests.yml?branch=master&style=flat-square)](https://github.com/artkonekt/resource/actions?query=workflow%3Atests)
 [![Packagist Stable Version](https://img.shields.io/packagist/v/konekt/resource.svg?style=flat-square&label=stable)](https://packagist.org/packages/konekt/resource)
 [![Packagist downloads](https://img.shields.io/packagist/dt/konekt/resource.svg?style=flat-square)](https://packagist.org/packages/konekt/resource)
 [![StyleCI](https://styleci.io/repos/186131934/shield?branch=master)](https://styleci.io/repos/186131934)
