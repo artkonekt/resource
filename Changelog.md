@@ -2,6 +2,11 @@
 
 ## 1.0-dev
 
+### Unreleased
+##### 2023-XX-YY
+
+- Added PHP 8.3 support
+
 ### 0.2.0
 ##### 2023-02-17
 
