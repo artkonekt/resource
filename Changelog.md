@@ -2,8 +2,8 @@
 
 ## 1.0-dev
 
-### Unreleased
-##### 2025-XX-YY
+### 0.4.0
+##### 2025-01-12
 
 - Added PHP 8.4 support
 
